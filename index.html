@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Place as few beacons as possible to cover an entire hex board. Solve three layouts and get hints that account for the beacons you placed.">
+  <title>Hex Dominance Puzzle</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<main>
+  <div class="heading">
+    <div><h1>Hex Dominance Puzzle</h1><p>Place as few beacons as possible to cover an entire hex board. Solve three layouts and get hints that account for the beacons you placed.</p></div>
+    <a href="https://github.com/netcodermike/hex-dominance-puzzle">Project source ↗</a>
+  </div>
+  <div class="workspace">
+    <section class="panel stage" aria-label="Project workspace">
+      <div id="board" class="hex-board" role="group" aria-label="Hex puzzle board"></div><p id="reading" role="status"></p>
+    </section>
+    <section class="panel controls" aria-label="Controls">
+      <label for="level">Puzzle<select id="level"></select></label>
+        <div class="actions"><button id="hint" type="button">Hint</button><button id="reset" type="button">Reset</button></div>
+        <p>Each beacon covers its tile and every neighboring open tile. Place or remove one by selecting a tile. You win when every open tile is covered.</p>
+        <ul class="hex-legend" aria-label="Tile key">
+          <li><i data-legend="open"></i>Open</li><li><i data-legend="covered"></i>Covered</li>
+          <li><i data-legend="beacon"></i>Beacon</li><li><i data-legend="blocked"></i>Rock</li>
+        </ul>
+        <p id="guidance" role="status"></p>
+    </section>
+  </div>
+</main>
+</body>
+</html>
